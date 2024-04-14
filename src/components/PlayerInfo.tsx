@@ -92,7 +92,7 @@ export const PlayerInfo = () => {
               [], 
               [], 
               [], 
-              [[playerState.data!.currentSeed, 0, 0, 0, score]]
+              [[(playerState.data! as any).currentSeed, 0, 0, 0, score]]
             ],
         })
         console.log("result", result)
@@ -108,7 +108,7 @@ export const PlayerInfo = () => {
             <div><button onClick={onSubmitProof} className="bg-slate-400 rounded-lg p-2">Submit proof</button></div>
             <ul className='list-disc list-inside'>
                 <li>PAW: {tokenBalance}</li>
-                <li>Best score: {playerState?.data?.bestScore?.toString()}</li>
+                <li>Best score: {(playerState?.data as any)?.bestScore?.toString()}</li>
             </ul>
         </div>
     )

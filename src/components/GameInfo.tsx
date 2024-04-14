@@ -20,7 +20,7 @@ export const GameInfo = () => {
         functionName: 'roundInfo',
         args: [currentRoundId?.data],
     })
-    const startTime = !!roundState?.data ? roundState?.data?.roundInfo?.startTime : 'Loading...'
+    const startTime = !!roundState?.data ? (roundState?.data as any)?.roundInfo?.startTime : 'Loading...'
     
     const _stakingAmount = useReadContract({
         abi,
